@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: chatgpt-backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8000:8000"
+    networks:
+      - chatnet
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: chatgpt-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - chatnet
+
+networks:
+  chatnet:
+    driver: bridge

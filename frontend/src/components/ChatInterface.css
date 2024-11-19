@@ -1,0 +1,128 @@
+/* frontend/src/components/ChatInterface.css */
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 60%;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+  }
+  
+  .messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+  }
+  
+  .message {
+    margin-bottom: 15px;
+    display: flex;
+  }
+  
+  .message.user {
+    justify-content: flex-end;
+  }
+  
+  .message.assistant {
+    justify-content: flex-start;
+  }
+  
+  .message-content {
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #e1ffc7;
+    position: relative;
+  }
+  
+  /* User messages styling */
+  .message.user .message-content {
+    background-color: #0084ff;
+    color: white;
+  }
+  
+  /* Assistant messages styling */
+  .message.assistant .message-content {
+    background-color: #e1ffc7;
+    color: black;
+  }
+  
+  /* Inline code styling */
+  .inline-code {
+    background-color: #f5f5f5;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  /* Code block container */
+  .code-block {
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  /* Copy button styling */
+  .copy-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+  
+  .copy-button:hover {
+    opacity: 1;
+  }
+  
+  /* Input area styling */
+  .input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background-color: #fff;
+  }
+  
+  .input-area input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+  }
+  
+  .input-area button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: #0084ff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+  }
+  
+  .input-area button:hover {
+    background-color: #005bb5;
+  }
+  
+  .input-area button:disabled {
+    background-color: #a0cfff;
+    cursor: not-allowed;
+  }
